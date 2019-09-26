@@ -1,0 +1,76 @@
+﻿body {
+}
+
+#mainNav.navbar-shrink .navbar-brand {
+    text-shadow: -3px 3px 6px black;
+    color: white;
+}
+
+#mainNav.navbar-shrink .nav-link {
+    text-shadow: -3px 3px 6px black;
+    color: white;
+}
+
+#mainNav.navbar-shrink {
+    /*background-image: linear-gradient(rgb(179, 203, 217), transparent);*/
+    background: linear-gradient(0deg, rgba(0,255,247,0) 0%, rgba(179, 203, 217,1) 100%);
+    /*background-color: rgba(179, 203, 217, 0.35);*/
+}
+
+.imagenNavegador {
+    width: 140px;
+}
+
+#mainNav.navbar-shrink .nav-link.active {
+    /*color: rgb(179, 203, 217);*/
+    color: white;
+    outline: 0;
+    border-bottom: .25rem solid rgb(179, 203, 217);
+    /*text-shadow: -3px 3px 4px black;*/
+}
+
+#mainNav.navbar-shrink .nav-link:hover {
+    color: rgb(125, 203, 217);
+    /*text-shadow: -3px 3px 6px white;*/
+}
+
+.modal-content {
+    background: rgba(88, 99, 105, 0.65);
+    color: white;
+}
+
+#about {
+    color: #fff;
+    background-color: transparent;
+    /*border-color: rgb(179, 203, 217);*/
+}
+    #about:hover {
+        background-color: rgb(125, 203, 217);
+    }
+#ContentPlaceHolder1_btnSuscribete {
+    background-color: rgb(179, 203, 217);
+}
+
+#ContentPlaceHolder1_btnSuscribete:hover {
+    background-color: rgb(125, 203, 217);
+}
+.botonModal {
+    border-top: 1px solid #dee2e6;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.modal-footer {
+    border-top: 0;
+    padding-top: 0;
+}
+.txtSuscriptor {
+    margin-top: 10px;
+}
+.modal-title {
+    margin-top: 20px;
+}
+#toveeModalInformacion {
+    background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+}

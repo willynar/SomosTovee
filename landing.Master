@@ -1,0 +1,250 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="landing.master.cs" Inherits="SomosTovee.landing" %>
+
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="pagina promocional de el grupo SomosTovee">
+    <meta name="author" content="william naranjo">
+
+    <title>SomosTovee</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="Assets/lib/startbootstrap-grayscale/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="Assets/lib/startbootstrap-grayscale/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="Assets/lib/startbootstrap-grayscale/css/grayscale.min.css" rel="stylesheet">
+
+    <link href="Assets/Css/StyleSheetLanding.css" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="page-top">
+    <form id="form1" runat="server">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" runat="server">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                    <img src="Assets/Images/tovee.png" class="img-fluid imagenNavegador" alt="">
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu       
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse right" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <%--<a class="nav-link js-scroll-trigger" href="#about">Acerca de</a>--%>
+                            <asp:LinkButton ID="lknAcercaLand" runat="server" CssClass="nav-link js-scroll-trigger" href="#about">Acerca de</asp:LinkButton>
+
+                        </li>
+                        <li class="nav-item">
+                            <%--<a class="nav-link js-scroll-trigger" ></a>--%>
+                            <asp:LinkButton ID="lknNoticiasLand" runat="server" CssClass="nav-link js-scroll-trigger" href="#projects">Noticias</asp:LinkButton>
+
+                        </li>
+                        <li class="nav-item">
+                            <%--<a class="nav-link js-scroll-trigger" href="#signup">contacto</a>--%>
+                            <asp:LinkButton ID="lknContactoLand" runat="server" CssClass="nav-link js-scroll-trigger" href="#signup">Contacto</asp:LinkButton>
+
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="lknLandig" runat="server" CssClass="nav-link js-scroll-trigger" Visible="False" PostBackUrl="landing">landing</asp:LinkButton>
+                            <%--<a class="nav-link js-scroll-trigger" href="#">grupos</a>--%>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="lknInicio" runat="server" CssClass="nav-link js-scroll-trigger" PostBackUrl="inicio">Inicio</asp:LinkButton>
+                            <%--<a class="nav-link js-scroll-trigger" href="#">grupos</a>--%>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="lknGruposLand" runat="server" CssClass="nav-link js-scroll-trigger" PostBackUrl="grupos" Visible="False">grupos</asp:LinkButton>
+                            <%--<a class="nav-link js-scroll-trigger" href="#">grupos</a>--%>
+                        </li>
+                        <li class="nav-item">
+                            <a id="triggerModal" class="nav-link" data-toggle="modal" data-target="#toveeModal" runat="server" visible="False">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="lknActualizarContactos" runat="server" CssClass="nav-link js-scroll-trigger" PostBackUrl="~/ActualizarContactosPagina.aspx" Visible="False">Contactos pagina</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="lknCerrarSession" runat="server" CssClass="nav-link" OnClick="lknCerrarSession_Click">Cerrar session</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header class="masthead" id="headerMasthead" runat="server">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">SomosTovee</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Bienvenidos</h2>
+                    <a id="about" href="#about" class="btn btn-primary js-scroll-trigger">Quienes somos</a>
+                </div>
+            </div>
+        </header>
+
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!-- Contact Section -->
+        <section class="contact-section bg-black">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Direccion</h4>
+                                <hr class="my-4">
+                                <asp:Label ID="lblDireccion" Text="" runat="server" CssClass="small text-black-50" />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Correo</h4>
+                                <hr class="my-4">
+                                <asp:HyperLink ID="HyperLink1" runat="server" CssClass="small text-black-50">
+                                    <asp:Label ID="lblCorreo" Text="" runat="server" />
+                                </asp:HyperLink>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Telefonos</h4>
+                                <hr class="my-4">
+                                <asp:Label ID="lblTelefonos" Text="" runat="server" CssClass="small text-black-50" />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social d-flex justify-content-center">
+                    <asp:HyperLink ID="lknYoutube" runat="server" CssClass="mx-2">
+                        <i class="fab fa-youtube"></i>
+                    </asp:HyperLink>
+                    <asp:HyperLink ID="lknFacebook" runat="server" CssClass="mx-2">
+                       <i class="fab fa-facebook-f"></i>
+                    </asp:HyperLink>
+                    <asp:HyperLink ID="lknInstagram" runat="server" CssClass="mx-2">
+                       <i class="fab fa-instagram"></i>
+                    </asp:HyperLink>
+                </div>
+
+            </div>
+        </section>
+        <!-- Modal iniciar session-->
+        <div class="modal fade" id="toveeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="Assets/Images/tovee.png" class="img-fluid imagenNavegador" alt="">
+                        <h5 class="modal-title">Iniciar session
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="email">Correo:</label>
+                            <asp:TextBox ID="txtCorreoIniciar" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                            <div class="invalid-feedback">
+                                <asp:Label ID="lblErrorCorreoVacioLogin" runat="server" Text="Debe ingresar un correo*"></asp:Label>
+                                <asp:Label ID="lblNoExisteCorreoLogin" runat="server" Text="El correo no esta registrado*" Visible="false"></asp:Label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña:</label>
+                            <asp:TextBox ID="txtContraseñaIniciar" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                            <div class="invalid-feedback">
+                                <asp:Label ID="lblErrorContraseñaVacioLogin" runat="server" Text="Debe ingresar una contraseña*"></asp:Label>
+                                <asp:Label ID="lblNoExisteContraseñaLogin" runat="server" Text="La contraseña es incorecta*" Visible="false"></asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="botonModal">
+                        <%--<a class="text-left" data-toggle="modal" data-dismiss="modal" data-target="#toveeModalRegistro">Registrarme</a>--%>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <asp:Button ID="btnIniciarSession" Text="Aceptar" runat="server" CssClass="btn btn-primary" OnClick="btnIniciarSession_Click" />
+                        <%--<button type="button" class=""></button>--%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Mensajes e informacion-->
+        <div class="modal fade" id="toveeModalInformacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div id="divModalAlert" class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h5 class="modal-title text-center">Alerta
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center" runat="server">
+                        <asp:Label ID="contenidoModalInformacion" Text="Ocurrio un error" runat="server" />
+                    </div>
+                    <div class="botonModal">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <%--<button type="button" class="btn btn-primary" visible="false">Aceptar</button>--%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="bg-black small text-center text-white-50">
+            <div class="container">
+                <asp:Label Text="Copyright &copy; SomosTovee 2019" runat="server" />
+
+
+            </div>
+        </footer>
+
+
+
+    </form>
+    <!-- Bootstrap core JavaScript -->
+    <script src="Assets/lib/startbootstrap-grayscale/vendor/jquery/jquery.min.js"></script>
+    <script src="Assets/lib/startbootstrap-grayscale/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="Assets/lib/startbootstrap-grayscale/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="Assets/lib/startbootstrap-grayscale/js/grayscale.min.js"></script>
+    <script src="Assets/Js/JavaScript.js"></script>
+
+</body>
+</html>
+
